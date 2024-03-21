@@ -5,7 +5,7 @@ int ptr_array_len(void** _array)
 	CHECK_PTR(_array);
 	int i = 0;
 	for(; _array[i]; ++i);
-	return i;
+	return i - 2;
 }
 
 int str_count_char(char* str, char c)

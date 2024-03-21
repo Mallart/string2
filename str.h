@@ -26,6 +26,7 @@ char** str_split(char* string, char delimiter);
 // Parse a string into an int.
 int str_to_int(char* string, int length);
 // Parse a string into a float.
+// The float part ignores any text put in the string that isn't digits.
 float str_to_float(char* str, int length);
 // Removes tabs, "returns", and spaces before the first visible character and after the last.
 char* str_trim(char* string);
