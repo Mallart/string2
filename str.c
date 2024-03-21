@@ -50,7 +50,7 @@ bool str_compare(char* str1, char* str2, int length)
 	CHECK_PTR(str2);
 	int i = 0;
 	for (; i < length && str1[i] == str2[i]; ++i);
-	return i == length - 1;
+	return i == length;
 }
 
 char** str_split(char* str, char delimiter)
