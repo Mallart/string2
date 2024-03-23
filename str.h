@@ -25,14 +25,24 @@ bool str_compare(char* string_1, char* string_2, int length);
 char** str_split(char* string, char delimiter);
 // Parse a string into an int.
 int str_to_int(char* string, int length);
+// Converts an int to a string
+char* int_to_str(long long n);
 // Parse a string into a float.
 // The float part ignores any text put in the string that isn't digits.
 float str_to_float(char* str, int length);
+// Converts a float to a string
+char* float_to_str(float n, int n_decimal_after_comma);
 // Removes tabs, "returns", and spaces before the first visible character and after the last.
 char* str_trim(char* string);
 // Creates a new string based on the given one, but beginning at a given index and finishing n characters after.
 char* str_substring(char* string, int start, int length);
+// Returns a new string being the concatenations of the two one's result
+char* str_concat(char* str1, char* str2);
+// Inserts a string inside another with the specified index
+char* str_insert(char* str, char* insert, int index);
 
+// Count and return the number of zeros (or the number's power of 10)
+int num_zeros(long long n);
 int power(int a, int b);
 float inverse_power(float, float);
 
