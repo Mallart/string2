@@ -23,7 +23,7 @@ int main()
     printf("Parsing the first four characters of \"%s\" to a float: %f\n", str, str_to_float(str, 4));
     printf(str_insert("This was into this string.\n", " an insert", 8));
     printf("This int: %d\tDisplayed as a string: %s\n", i_test, int_to_str(i_test));
-    printf("This float: %f\tDisplayed as a string: %s\n", f_test, float_to_str(f_test, 2));
+    printf("This float: %f\tDisplayed as a string: %s\n", f_test, float_to_str(f_test));
     printf(str_concat("Now be ready for ", "concatenation !\n"));
     str="\nplease, do, an , array\t, go\n, on";
     char** _array = str_split(str, ',');

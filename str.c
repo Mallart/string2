@@ -117,9 +117,9 @@ float str_to_float(char* str, int len)
 	return sum;
 }
 
-char* float_to_str(float n, int n_decimals_after_comma)
+char* float_to_str(float n)
 {
-	return str_insert(int_to_str((long long)(n * power(10, n_decimals_after_comma))), ".", n_decimals_after_comma + 1);
+	return str_insert(int_to_str((long long)(n * power(10, f_num_zeros(n) + 1))), ".", f_num_zeros(n) + 1);
 }
 
 char* str_trim(char* str)
@@ -220,6 +220,17 @@ int num_zeros(long long n)
 	while (f > 10)
 	{
 		f /= 10;
+		++i;
+	}
+	return i;
+}
+
+int f_num_zeros(float n)
+{
+	int i = 0;
+	while (n > 10)
+	{
+		n /= 10;
 		++i;
 	}
 	return i;

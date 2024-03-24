@@ -31,7 +31,7 @@ char* int_to_str(long long n);
 // The float part ignores any text put in the string that isn't digits.
 float str_to_float(char* str, int length);
 // Converts a float to a string
-char* float_to_str(float n, int n_decimal_after_comma);
+char* float_to_str(float n);
 // Removes tabs, "returns", and spaces before the first visible character and after the last.
 char* str_trim(char* string);
 // Creates a new string based on the given one, but beginning at a given index and finishing n characters after.
@@ -41,8 +41,10 @@ char* str_concat(char* str1, char* str2);
 // Inserts a string inside another with the specified index
 char* str_insert(char* str, char* insert, int index);
 
-// Count and return the number of zeros (or the number's power of 10)
+// Count and return the number of zeros (or the number's power of 10) of a long int
 int num_zeros(long long n);
+// Count and return the number of zeros (number's power of 10) of a float
+int f_num_zeros(float n);
 int power(int a, int b);
 float inverse_power(float, float);
 
