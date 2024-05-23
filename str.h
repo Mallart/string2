@@ -8,6 +8,9 @@
 #define CHECK_PTR(ptr) if(!ptr) return 0
 #define CAST_STR_TO_INT(str) str_to_int(str, str_len(str))
 #define CAST_STR_TO_FLOAT(str) str_to_float(str, str_len(str))
+#define APPEND_STR(_dest, _src) memcpy(_dest, _src, strlen(_src) * sizeof(char))
+#define APPEND_INCR_STR(_index, _dest, _src) { memcpy(_dest + _index, _src, strlen(_src) * sizeof(char)); _index += strlen(_src); }
+#define STR_INCR_RETURN(_index, _dest) { memcpy(_dest + index, "\n", 1); _index++; }
 
 // Returns the number of elements in a pointer array.
 int ptr_array_len(void** _array);
@@ -40,7 +43,10 @@ char* str_substring(char* string, int start, int length);
 char* str_concat(char* str1, char* str2);
 // Inserts a string inside another with the specified index
 char* str_insert(char* str, char* insert, int index);
-
+// Converts a character to a string
+char* char_to_str(char c);
+// Finds a character and returns its position
+size_t find_char(char* str, char c);
 // Count and return the number of zeros (or the number's power of 10) of a long int
 int num_zeros(long long n);
 // Count and return the number of zeros (number's power of 10) of a float

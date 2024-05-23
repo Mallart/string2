@@ -197,6 +197,22 @@ char* str_insert(char* str, char* insert, int index)
 	return result;
 }
 
+char* char_to_str(char c)
+{
+	char* str = malloc(sizeof(char) * 2);
+	CHECK_NV_PTR(str);
+	str[0] = c;
+	str[1] = '\0';
+	return str
+}
+
+size_t find_char(char* str, char c)
+{
+	size_t i = 0,
+		len = str_len(str);
+	for (; i < len && str[i] != c; ++i);
+	return i;
+}
 
 int power(int a, int b)
 {
